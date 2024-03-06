@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>C4C</title>
+    <style>
+    .navbar .nav-logo{
+      height: 50px;
+    }
+    .navbar .active .nav-link{
+      color:#C2452D !important;
+    }
+    .navbar .nav-link{
+      color:#222221 !important;
+    }
+    .btn-yellow{
+      background-color: #E47C14 ;
+      color: white;
+    }
+    .btn-yellow:hover{
+      background-color: white ;
+      color: #E47C14;
+      border: 1px solid #E47C14;
+    }
+    .partner-org .partner-logo{
+      max-width: 120px;
+      max-height: 80px;
+    }
+    .notices .card-text-limit {
+      height: 170px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .hero-section {
+      background-image: url('bg.webp'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+    .hero-content{
+        padding: 30px;
+        background-color:#2A8093 ;
+        color: white;
+    }
+    .partner-org{
+        /* text-align: center; */
+    }
+    .notices{
+        background-color: #F3F2EE;
+    }
+    .notices .card{
+        margin-top: 20px;
+        border-top: 9px solid ;
+        border-radius: 10px;
+        min-height: 70vh !important ;
+    }
+    .notices .card-text-limit {
+      height: 30vh;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media screen and (max-width: 760px) {
+      .notices .card{
+        min-height: 50vh !important ;
+      }
+      .notices .card-text-limit {
+        height: 20vh;
+      }
+      .sign-up .row{
+        min-height: 10vh;
+      }
+      .sign-up .sign-up-title h2{
+        margin-top: 0vh !important;
+      }
+      .sign-up form{
+        width: 90% !important;
+      }
+      
+    }
+    .notices .card-1{
+        border-top: 9px solid #7BB0BC;
+    }
+    .notices .card-2{
+        border-top: 9px solid #F9AF5B;
+    }
+    .notices .card-3{
+        border-top: 9px solid #EB6C54;
+    }
+    .btn-outline-red{
+        color: #C2452D;
+        border-color: #C2452D;
+    }
+    .btn-outline-red:hover{
+        border-color: #C2452D;
+        background-color: #C2452D ;
+    }
+    .btn-red{
+      border: 1px solid #C2452D;
+      background-color: #C2452D;
+      color: white;
+    }
+    .btn-red:hover{
+      border: 1px solid #C2452D;
+      background-color: white;
+      color: #C2452D;
+    }
+    .blogs .card{
+        margin-top: 20px;
+        border-radius: 7px;
+    }
+    .blogs .card-img-top{
+      width: 100%;
+      height: 230px;
+      border-top-left-radius:7px ;
+      border-top-right-radius:7px ;
+    }
+    .blogs .card-text-limit {
+        height: 20vh;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .blogs .tag .tag-purple{
+      background:#5564a22a ;
+      color:#4c5997 ;
+      padding: 1px 10px 5px 10px;
+      margin-right: 10px;
+      border-radius: 15px;
+    }
+    .blogs .tag .tag-green{
+      background:#83b5c03c ;
+      color:#679DAA ;
+      padding: 1px 10px 5px 10px;
+      margin-right: 10px;
+      border-radius: 15px;
+    }
+    .publications{
+        background-color: #F3F2EE;
+    }
+    .publications .card-img-top{
+      height: 55vh;
+    }
+    .publications .card-text-limit{
+      height: 10vh;
+    }
+    .publications .tag .tag-grey{
+      background:#b9b9b96a ;
+      color:#222221 ;
+      padding: 1px 10px 5px 10px;
+      margin-right: 10px;
+      border-radius: 15px;
+    }
+    .text-red{
+      color: #C2452D;
+    }
+    .sign-up .row{
+      height: 100vh;
+    }
+    .sign-up .sign-up-title{
+      background-color: #83B5C0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sign-up .sign-up-title h2{
+      margin-top: 45vh;
+    }
+    
+    .sign-up .sign-up-form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .sign-up .input-style{
+      background-color: #EFF0F2;
+      border: 1px solid #DADADA;
+      color: #999999;
+    }
+    footer{
+      background: #000;
+    }
+    footer .footer-line{
+      border-bottom: 2px solid white;
+    }
+    footer .footer-logo{
+      width: 80px;
+      height: 40px;
+    }
+
+
+    
+    </style>
+  </head>
+  <body>
+<!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="c4c-logo.png" alt="Logo" class="nav-logo">
+          </a>
+      
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link mx-2" href="#"><b>Home <span class="sr-only">(current)</span></b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#"><b>Why Cities4Children?</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#"><b>About Us</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#"><b>Knowledge Hub</b></a>
+              </li>
+              <li>
+                <button class="btn btn-yellow mx-2">Join the Movement</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+<!-- Hero section -->
+
+    <div class="hero-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+                <div class="hero-content">
+                    <h2 class="mb-4 pb-4">Does your city promote child health, safety and wellbeing?</h2>
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- partner org -->
+
+    <div class="partner-org">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h2>Partner Organizations </h2>
+                </div>
+            </div>
+            <div class="row p-5">
+                <div class="col-sm-6 col-md-3 text-center p-4">
+                  <img src="wv.png" class="img-fluid partner-logo" alt="Image 1">
+                </div>
+                <div class="col-sm-6 col-md-3 text-center p-4">
+                  <img src="c4c-logo.png" class="img-fluid partner-logo" alt="Image 2">
+                </div>
+                <div class="col-sm-6 col-md-3 text-center p-4">
+                  <img src="wv.png" class="img-fluid partner-logo" alt="Image 3">
+                </div>
+                <div class="col-sm-6 col-md-3 text-center p-4">
+                  <img src="c4c-logo.png" class="img-fluid partner-logo" alt="Image 4">
+                </div>
+              </div>
+        </div>
+    </div>
+    <!-- notices -->
+    <div class="notices">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center  my-5">
+                    <h2>Notices</h2>
+                </div>
+            </div>
+            <div class="row pb-4">
+                <div class="col-md-4">
+                    <div class="card card-1 p-2">
+                      <div class="card-body">
+                        <p class="mt-4 mb-3 text-muted">Sub Header</p>
+                        <h6 class="card-title">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                        <p class="card-text card-text-limit">LLorem ipsum dolor sit amet, csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit aet, csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, csectetur sed do eiusmodeyu...</p>
+                        <div class="row">
+                            <div class="col">
+                              <a href="#" class="btn btn-outline-primary btn-outline-red">Read More</a>
+                            </div>
+                            <div class="col text-right">
+                              <p class="card-date mt-2">January 24, 2024</p>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card  card-2">
+                      <div class="card-body">
+                        <p class="mt-4 mb-3 text-muted">Sub Header</p>
+                        <h6 class="card-title">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                        <p class="card-text card-text-limit">LLorem id do eiusmod tempor incididunt ut. Lorem ipsum dolor sit aet, csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, csectetur sed do eiusmodeyu...</p>
+                        <div class="row">
+                            <div class="col">
+                              <a href="#" class="btn btn-outline-primary btn-outline-red">Read More</a>
+                            </div>
+                            <div class="col text-right">
+                              <p class="card-date mt-2">January 24, 2024</p>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              <div class="col-md-4">
+                <div class="card  card-3">
+                  <div class="card-body">
+                    <p class="mt-4 mb-3 text-muted">Sub Header</p>
+                    <h6 class="card-title">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                    <p class="card-text card-text-limit">LLorem ipsum dolor sit amet, csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit aet, csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, csectetur sed do eiusmodeyu...</p>
+                    <div class="row">
+                        <div class="col">
+                          <a href="#" class="btn btn-outline-primary btn-outline-red">Read More</a>
+                        </div>
+                        <div class="col text-right">
+                          <p class="card-date mt-2">January 24, 2024</p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="float-right mb-4">
+                  <button class="btn btn-red">Show All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+<!-- our blogs -->
+    <div class="blogs">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 text-center  my-5">
+                  <h2>Our Blogs</h2>
+              </div>
+          </div>
+          <div class="row pb-4">
+              <div class="col-md-4">
+                <div class="card" >
+                  <img class="card-img-top" src="bg.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <div class="tag mb-3">
+                        <span class="tag-purple"><small>First Tag</small></span>
+                        <span class="tag-green"><small>Second Tag</small></span>
+                      </div>
+                      <h6 class="card-title">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                      <p class="card-text card-text-limit">m ipsum dolor sit amet, csectetur sed do eiusmodeyu...</p>
+                      <div class="row">
+                        <div class="col">
+                          <a href="#" class="btn btn btn-red">Read More</a>
+                        </div>
+                        <div class="col text-right">
+                          <p class="card-date mt-2">January 24, 2024</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card" >
+                    <img class="card-img-top" src="bg.webp" alt="Card image cap">
+                      <div class="card-body">
+                          <div class="tag mb-3">
+                            <span class="tag-purple"><small>First Tag</small></span>
+                            <span class="tag-green"><small>Second Tag</small></span>
+                          </div>
+                          <h6 class="card-title">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                          <p class="card-text card-text-limit">csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, csectetur sed do eiusmodeyu...</p>
+                          <div class="row">
+                            <div class="col">
+                              <a href="#" class="btn btn btn-red">Read More</a>
+                            </div>
+                            <div class="col text-right">
+                              <p class="card-date mt-2">January 24, 2024</p>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+            <div class="col-md-4">
+              <div class="card" >
+                <img class="card-img-top" src="bg.webp" alt="Card image cap">
+                  <div class="card-body">
+                    <div class="tag mb-3">
+                      <span class="tag-purple"><small>First Tag</small></span>
+                      <span class="tag-green"><small>Second Tag</small></span>
+                    </div>
+                    <h6 class="card-title">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                    <p class="card-text card-text-limit">csectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, csectetur sed do eiusmodeyu...</p>
+                    <div class="row">
+                      <div class="col">
+                        <a href="#" class="btn btn btn-red">Read More</a>
+                      </div>
+                      <div class="col text-right">
+                        <p class="card-date mt-2">January 24, 2024</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+<!-- Publications -->
+    <div class="publications pb-4">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 text-center  mt-5">
+                  <h2>Publications</h2>
+              </div>
+          </div>
+          <div class="row pb-4">
+              <div class="col-md-4 mt-4">
+                <div class="card" >
+                  <img class="card-img-top" src="bg.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <div class="tag mb-3">
+                        <span class="tag-grey"><small>First Tag</small></span>
+                        <span class="tag-grey"><small>Second Tag</small></span>
+                      </div>
+                      <h6 class="card-title card-text-limit">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                      <div class="row">
+                        <div class="col">
+                          <a href="#" class="btn btn btn-red">Open File</a>
+                        </div>
+                        <div class="col text-right">
+                          <p class="card-date mt-2">January 24, 2024</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-4">
+                <div class="card" >
+                  <img class="card-img-top" src="bg.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <div class="tag mb-3">
+                        <span class="tag-grey"><small>First Tag</small></span>
+                        <span class="tag-grey"><small>Second Tag</small></span>
+                      </div>
+                      <h6 class="card-title card-text-limit">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                      <div class="row">
+                        <div class="col">
+                          <a href="#" class="btn btn btn-red">Open File</a>
+                        </div>
+                        <div class="col text-right">
+                          <p class="card-date mt-2">January 24, 2024</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            <div class="col-md-4 mt-4">
+              <div class="card" >
+                <img class="card-img-top" src="bg.webp" alt="Card image cap">
+                  <div class="card-body">
+                    <div class="tag mb-3">
+                      <span class="tag-grey"><small>First Tag</small></span>
+                      <span class="tag-grey"><small>Second Tag</small></span>
+                    </div>
+                    <h6 class="card-title card-text-limit">Header Lorem ipsum dolor sitmet, tetur adipiscing eli</h6>
+                    <div class="row">
+                      <div class="col">
+                        <a href="#" class="btn btn btn-red">Open File</a>
+                      </div>
+                      <div class="col text-right">
+                        <p class="card-date mt-2">January 24, 2024</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+<!-- sign up -->
+    <div class="container-fluid sign-up">
+      <div class="row">
+        <div class="col-md-5 sign-up-title">
+            <h2>Sign up <br> to our mailing list</h2>
+        </div>
+        <div class="col-md-7 sign-up-form">
+          <form class="w-50 ">
+            <div class="text-right">
+              <p class="text-red m-0"><small>* indicates required</small></p>
+            </div>
+            <div class="form-group">
+              <label><b>First Name<span class="text-red">*</span></b></label>
+              <input type="text" class="form-control input-style" id="" placeholder="Enter your First Name">
+            </div>
+            <div class="form-group">
+              <label><b>Email address<span class="text-red">*</span></b></label>
+              <input type="email" class="form-control input-style" id="" aria-describedby="" placeholder="Enter your Email Address">
+            </div>
+            <div class="form-group">
+              <label><b>Country<span class="text-red">*</span></b></label>
+              <input type="text" class="form-control input-style" id="" placeholder="Enter your Country">
+            </div>
+            <div class="form-group">
+              <label><b>Organization</b></label>
+              <input type="text" class="form-control input-style" id="" placeholder="Enter your Organization">
+            </div>
+            <button type="submit" class="btn btn-red px-4">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container p-4">
+          <div class="row footer-line">
+            <div class="col-6">
+              <p class="text-light pt-2 pl-5">© 2024 C4C Bangladesh</p>
+            </div>
+            <div class="col-6">
+              <img class="float-right footer-logo"src="c4c-logo.png" alt="">
+            </div>
+          </div>
+        </div>
+
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
